@@ -12,9 +12,3 @@ export const appSourse = new DataSource({
     logging: true,
     entities: [Category],
 });
-
-appSourse.initialize().then(() => {
-    console.log('Connected')
-}).catch((err) => {
-    console.log('Error', err)
-});
