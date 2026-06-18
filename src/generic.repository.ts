@@ -20,4 +20,10 @@ export abstract class GenericDataService<T extends ObjectLiteral> {
         console.log(`${this.getRepoName()} deleted successfully.`);
         return removedItem;
     }
+
+    async getOneById(id: number): Promise<T | null> {
+        return await this.repository.findOne({
+            where: { id } as any
+        });
+    }
 }
